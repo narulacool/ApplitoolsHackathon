@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -17,11 +18,17 @@ public class GenericFunctions {
 	WebDriver driver;
 	WebDriverWait wait;
 	ChromeDriverService service ;
-
+	
+	public GenericFunctions() {
+	}
+	
+	public GenericFunctions(WebDriver driver) {
+		wait = new WebDriverWait(driver, 10);		
+	}
+	
 	public WebDriver startDriver(String browser) {
 		if(browser.equalsIgnoreCase("Chrome"))
 		{	
-
 			System.setProperty("webdriver.chrome.driver", getClass().getClassLoader().getResource("chromeDriver/chromedriver.exe").getPath());
 			driver = new ChromeDriver();
 

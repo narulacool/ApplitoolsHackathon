@@ -5,12 +5,9 @@
     <classes>
       <class name="tests.TraditionalTests">
         <methods>
-          <include name="DataDrivenTest" invocation-numbers="0"/>
+          <include name="DataDrivenTest" invocation-numbers="0 1 2 3"/>
           <include name="initialize"/>
-          <include name="TableSortTest"/>
           <include name="cleanUp"/>
-          <include name="LoginPageUIElementsTest"/>
-          <include name="DynamicContentTest"/>
         </methods>
       </class> <!-- tests.TraditionalTests -->
     </classes>

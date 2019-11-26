@@ -1,25 +1,181 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="4" total="5" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="8" passed="8">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="4820" started-at="2019-11-26T19:32:09Z" finished-at="2019-11-26T19:32:14Z">
+  <suite name="Default suite" duration-ms="290091" started-at="2019-11-26T20:46:18Z" finished-at="2019-11-26T20:51:08Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="4820" started-at="2019-11-26T19:32:09Z" finished-at="2019-11-26T19:32:14Z">
-      <class name="tests.TraditionalTests">
-        <test-method status="PASS" signature="initialize()[pri:0, instance:tests.TraditionalTests@cb644e]" name="initialize" is-config="true" duration-ms="3931" started-at="2019-11-26T19:32:09Z" finished-at="2019-11-26T19:32:13Z">
+    <test name="Default test" duration-ms="290091" started-at="2019-11-26T20:46:18Z" finished-at="2019-11-26T20:51:08Z">
+      <class name="tests.VisualAITests">
+        <test-method status="PASS" signature="setBatch()[pri:0, instance:tests.VisualAITests@5702b3b1]" name="setBatch" is-config="true" duration-ms="47" started-at="2019-11-26T20:46:18Z" finished-at="2019-11-26T20:46:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setBatch -->
+        <test-method status="PASS" signature="initialize()[pri:0, instance:tests.VisualAITests@5702b3b1]" name="initialize" is-config="true" duration-ms="2721" started-at="2019-11-26T20:46:18Z" finished-at="2019-11-26T20:46:21Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method status="PASS" signature="CanvasChartTest()[pri:0, instance:tests.TraditionalTests@cb644e]" name="CanvasChartTest" duration-ms="15" started-at="2019-11-26T19:32:13Z" finished-at="2019-11-26T19:32:13Z">
+        <test-method status="PASS" signature="CanvasChartTest()[pri:0, instance:tests.VisualAITests@5702b3b1]" name="CanvasChartTest" duration-ms="41381" started-at="2019-11-26T20:46:21Z" finished-at="2019-11-26T20:47:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CanvasChartTest -->
-        <test-method status="PASS" signature="cleanUp()[pri:0, instance:tests.TraditionalTests@cb644e]" name="cleanUp" is-config="true" duration-ms="835" started-at="2019-11-26T19:32:13Z" finished-at="2019-11-26T19:32:14Z">
+        <test-method status="PASS" signature="cleanUp()[pri:0, instance:tests.VisualAITests@5702b3b1]" name="cleanUp" is-config="true" duration-ms="781" started-at="2019-11-26T20:47:02Z" finished-at="2019-11-26T20:47:03Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUp -->
-      </class> <!-- tests.TraditionalTests -->
+        <test-method status="PASS" signature="initialize()[pri:0, instance:tests.VisualAITests@5702b3b1]" name="initialize" is-config="true" duration-ms="2592" started-at="2019-11-26T20:47:03Z" finished-at="2019-11-26T20:47:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialize -->
+        <test-method status="PASS" signature="DataDrivenTest(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tests.VisualAITests@5702b3b1]" name="DataDrivenTest" duration-ms="15121" started-at="2019-11-26T20:47:06Z" data-provider="DataDrivenTest" finished-at="2019-11-26T20:47:21Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Both username & password empty]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- DataDrivenTest -->
+        <test-method status="PASS" signature="cleanUp()[pri:0, instance:tests.VisualAITests@5702b3b1]" name="cleanUp" is-config="true" duration-ms="774" started-at="2019-11-26T20:47:21Z" finished-at="2019-11-26T20:47:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanUp -->
+        <test-method status="PASS" signature="initialize()[pri:0, instance:tests.VisualAITests@5702b3b1]" name="initialize" is-config="true" duration-ms="2495" started-at="2019-11-26T20:47:22Z" finished-at="2019-11-26T20:47:24Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialize -->
+        <test-method status="PASS" signature="DataDrivenTest(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tests.VisualAITests@5702b3b1]" name="DataDrivenTest" duration-ms="15372" started-at="2019-11-26T20:47:24Z" data-provider="DataDrivenTest" finished-at="2019-11-26T20:47:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[testuser]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Password field empty]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- DataDrivenTest -->
+        <test-method status="PASS" signature="cleanUp()[pri:0, instance:tests.VisualAITests@5702b3b1]" name="cleanUp" is-config="true" duration-ms="754" started-at="2019-11-26T20:47:40Z" finished-at="2019-11-26T20:47:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanUp -->
+        <test-method status="PASS" signature="initialize()[pri:0, instance:tests.VisualAITests@5702b3b1]" name="initialize" is-config="true" duration-ms="1256" started-at="2019-11-26T20:47:40Z" finished-at="2019-11-26T20:47:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialize -->
+        <test-method status="PASS" signature="DataDrivenTest(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tests.VisualAITests@5702b3b1]" name="DataDrivenTest" duration-ms="15626" started-at="2019-11-26T20:47:42Z" data-provider="DataDrivenTest" finished-at="2019-11-26T20:47:57Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[testpassword]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Username field empty]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- DataDrivenTest -->
+        <test-method status="PASS" signature="cleanUp()[pri:0, instance:tests.VisualAITests@5702b3b1]" name="cleanUp" is-config="true" duration-ms="775" started-at="2019-11-26T20:47:57Z" finished-at="2019-11-26T20:47:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanUp -->
+        <test-method status="PASS" signature="initialize()[pri:0, instance:tests.VisualAITests@5702b3b1]" name="initialize" is-config="true" duration-ms="2616" started-at="2019-11-26T20:47:58Z" finished-at="2019-11-26T20:48:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialize -->
+        <test-method status="PASS" signature="DataDrivenTest(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tests.VisualAITests@5702b3b1]" name="DataDrivenTest" duration-ms="48547" started-at="2019-11-26T20:48:01Z" data-provider="DataDrivenTest" finished-at="2019-11-26T20:48:49Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[testuser]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[testpassword]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Valid username & password]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- DataDrivenTest -->
+        <test-method status="PASS" signature="cleanUp()[pri:0, instance:tests.VisualAITests@5702b3b1]" name="cleanUp" is-config="true" duration-ms="766" started-at="2019-11-26T20:48:49Z" finished-at="2019-11-26T20:48:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanUp -->
+        <test-method status="PASS" signature="initialize()[pri:0, instance:tests.VisualAITests@5702b3b1]" name="initialize" is-config="true" duration-ms="1293" started-at="2019-11-26T20:48:50Z" finished-at="2019-11-26T20:48:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialize -->
+        <test-method status="PASS" signature="DynamicContentTest()[pri:0, instance:tests.VisualAITests@5702b3b1]" name="DynamicContentTest" duration-ms="79011" started-at="2019-11-26T20:48:51Z" finished-at="2019-11-26T20:50:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- DynamicContentTest -->
+        <test-method status="PASS" signature="cleanUp()[pri:0, instance:tests.VisualAITests@5702b3b1]" name="cleanUp" is-config="true" duration-ms="766" started-at="2019-11-26T20:50:10Z" finished-at="2019-11-26T20:50:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanUp -->
+        <test-method status="PASS" signature="initialize()[pri:0, instance:tests.VisualAITests@5702b3b1]" name="initialize" is-config="true" duration-ms="1715" started-at="2019-11-26T20:50:11Z" finished-at="2019-11-26T20:50:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialize -->
+        <test-method status="PASS" signature="LoginPageUIElementsTest()[pri:0, instance:tests.VisualAITests@5702b3b1]" name="LoginPageUIElementsTest" duration-ms="20059" started-at="2019-11-26T20:50:13Z" finished-at="2019-11-26T20:50:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginPageUIElementsTest -->
+        <test-method status="PASS" signature="cleanUp()[pri:0, instance:tests.VisualAITests@5702b3b1]" name="cleanUp" is-config="true" duration-ms="783" started-at="2019-11-26T20:50:33Z" finished-at="2019-11-26T20:50:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanUp -->
+        <test-method status="PASS" signature="initialize()[pri:0, instance:tests.VisualAITests@5702b3b1]" name="initialize" is-config="true" duration-ms="1264" started-at="2019-11-26T20:50:34Z" finished-at="2019-11-26T20:50:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialize -->
+        <test-method status="PASS" signature="TableSortTest()[pri:0, instance:tests.VisualAITests@5702b3b1]" name="TableSortTest" duration-ms="32793" started-at="2019-11-26T20:50:35Z" finished-at="2019-11-26T20:51:08Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TableSortTest -->
+        <test-method status="PASS" signature="cleanUp()[pri:0, instance:tests.VisualAITests@5702b3b1]" name="cleanUp" is-config="true" duration-ms="753" started-at="2019-11-26T20:51:08Z" finished-at="2019-11-26T20:51:08Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanUp -->
+      </class> <!-- tests.VisualAITests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

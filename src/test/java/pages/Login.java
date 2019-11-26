@@ -5,9 +5,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utils.GenericFunctions;
+
 public class Login {
 	
 	WebDriver driver;
+	GenericFunctions generic;
 
 	@FindBy(xpath = "//img[contains(@src,'img/logo-big.png')]")
 	public WebElement logo;
@@ -58,7 +61,12 @@ public class Login {
 	public Login(WebDriver driver){
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
-        //PageFactory.initElements(new AjaxElementLocatorFactory(driver, 15), this);
-
+	}
+	
+	public void loginUser(String username, String Password) {
+		generic = new GenericFunctions(driver);
+		generic.fill(usernameTextBox, username);
+		generic.fill(passwordTextBox, Password);
+		generic.click(loginBtn);
 	}
 }

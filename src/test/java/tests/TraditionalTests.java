@@ -19,6 +19,7 @@ import org.testng.asserts.SoftAssert;
 import base.BaseTest;
 import pages.HomePage;
 import pages.Login;
+import utils.Config;
 import utils.GenericFunctions;
 import utils.UrlProvider;
 
@@ -37,6 +38,7 @@ public class TraditionalTests extends BaseTest {
 		urlProvider = new UrlProvider();
 		login = new Login(driver);
 		homePage = new HomePage(driver);
+		config = new Config(); 
 		wait = new WebDriverWait(driver, 10);
 		softAssert = new SoftAssert();
 	}
@@ -111,10 +113,7 @@ public class TraditionalTests extends BaseTest {
 	@Test(dataProvider = "DataDrivenTest") 
 	public void DataDrivenTest(String username,String password, String expectedString, String locator, String testName) {
 		generic.openUrl(urlProvider.getV2Url());
-
-		generic.fill(login.usernameTextBox, username);
-		generic.fill(login.passwordTextBox, password);
-		generic.click(login.loginBtn);
+		login.loginUser(username, password);
 		WebElement elementToCheck = driver.findElement(By.xpath(locator));
 		softAssert.assertTrue(generic.isVisible(elementToCheck),testName+" Failed. Element not visible");
 		softAssert.assertEquals(generic.getText(elementToCheck),expectedString,testName+" Failed. Text does not match");
@@ -124,10 +123,8 @@ public class TraditionalTests extends BaseTest {
 	@Test
 	public void TableSortTest() {
 		generic.openUrl(urlProvider.getV2Url());
-		generic.fill(login.usernameTextBox, "testUser");
-		generic.fill(login.passwordTextBox, "testPassword");
-		generic.click(login.loginBtn);
-			
+		login.loginUser(config.username, config.password);
+	
 		//Store table in a linkedHashMap with Time column as the key 
 		//so that row remains unique in case multiple rows are of same amount/category/Description
 		LinkedHashMap<String,LinkedHashMap<Integer,String>> tableBeforeRefactor = generic.getTableRows(homePage.transactionsTable,1);
@@ -177,10 +174,7 @@ public class TraditionalTests extends BaseTest {
 	@Test
 	public void DynamicContentTest() {
 		generic.openUrl(urlProvider.getV2Url()+"?showAd=true");
-		generic.fill(login.usernameTextBox, "testUser");
-		generic.fill(login.passwordTextBox, "testPassword");
-		generic.click(login.loginBtn);
-		
+		login.loginUser(config.username, config.password);
 		softAssert.assertTrue(generic.isVisible(homePage.flashSaleImage1),"Failed. First flash sale image not visible");
 		softAssert.assertTrue(generic.isVisible(homePage.flashSaleImage2),"Failed. Second flash sale image not visible");
 		softAssert.assertAll();

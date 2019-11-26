@@ -26,13 +26,12 @@ public class VisualAITests  extends BaseTest  {
 	HomePage homePage;
 	WebDriverWait wait;
 	SoftAssert softAssert;
-	private EyesRunner runner;
-	private Eyes eyes;
-	private static BatchInfo batch;
-	Config config;
+	EyesRunner runner;
+	Eyes eyes;
+	BatchInfo batch;
+
 	@BeforeClass
-	public static void setBatch() {
-		// Must be before ALL tests (at Class-level)
+	public void setBatch() {
 		batch = new BatchInfo("Hackathon");
 	}
 
@@ -40,20 +39,20 @@ public class VisualAITests  extends BaseTest  {
 	public void initialize() {
 		config = new Config();
 
-		// Initialize the Runner for your test.
+		// Initialize the Runner for test.
 		runner = new ClassicRunner();
 
 		// Initialize the eyes SDK
 		eyes = new Eyes(runner);
 
-		// Set your personal Applitols API Key from your environment variables.
+		// Set personal Applitools API Key
 		eyes.setApiKey(config.apiKey);
 
 		// set batch name
 		eyes.setBatch(batch);
 		eyes.setForceFullPageScreenshot(true);
 		eyes.setHideScrollbars(true);
-		
+
 		generic = new GenericFunctions();
 		driver = generic.startDriver("Chrome");
 		urlProvider = new UrlProvider();
@@ -67,11 +66,9 @@ public class VisualAITests  extends BaseTest  {
 	public void cleanUp(){
 		// Close the browser.
 		driver.quit();
-		
-		// If the test was aborted before eyes.close was called, ends the test as
-		// aborted.
-		eyes.abortIfNotClosed();
 
+		// If the test was aborted before eyes.close was called, ends the test as aborted.
+		eyes.abortIfNotClosed();
 	}
 
 	@Test
@@ -84,8 +81,8 @@ public class VisualAITests  extends BaseTest  {
 	}
 
 	@DataProvider(name = "DataDrivenTest") 
-	  public Object[][] testDataforDataDrivenTest()
-	  { 
+	public Object[][] testDataforDataDrivenTest()
+	{ 
 		login = new Login(driver);
 		homePage = new HomePage(driver);
 		return new Object[][]{
@@ -93,18 +90,14 @@ public class VisualAITests  extends BaseTest  {
 			{"testuser","","Password field empty"},
 			{"","testpassword","Username field empty"},
 			{"testuser","testpassword","Valid username & password"}
-	  } ;
-	  }
+		} ;
+	}
 
 	@Test(dataProvider = "DataDrivenTest") 
 	public void DataDrivenTest(String username,String password, String testName) {
 		eyes.open(driver, "Hackathon App", testName);
-
 		generic.openUrl(urlProvider.getV2Url());
-
-		generic.fill(login.usernameTextBox, username);
-		generic.fill(login.passwordTextBox, password);
-		generic.click(login.loginBtn);
+		login.loginUser(username, password);
 		// Visual checkpoint #1 - Check the page according to test.
 		eyes.checkWindow(testName);
 		eyes.closeAsync();
@@ -114,31 +107,24 @@ public class VisualAITests  extends BaseTest  {
 	public void TableSortTest() {
 		eyes.open(driver, "Hackathon App", "TableSortTest");
 		generic.openUrl(urlProvider.getV2Url());
-		generic.fill(login.usernameTextBox, "testUser");
-		generic.fill(login.passwordTextBox, "testPassword");
-		generic.click(login.loginBtn);
-		
+		login.loginUser(config.username, config.password);
+
 		// Visual checkpoint #1 - Check before sorting.
 		eyes.checkWindow("BeforeSortingOnAmount");
 
 		generic.click(homePage.amountHeader);
-	
+
 		// Visual checkpoint #2 - Check after sorting.
 		eyes.checkWindow("AfterSortingOnAmount");
-
 		eyes.closeAsync();
 
 	}
-	
-	
 
 	@Test
 	public void CanvasChartTest() {
 		eyes.open(driver, "Hackathon App", "CanvasChartTest");
 		generic.openUrl(urlProvider.getV2Url());
-		generic.fill(login.usernameTextBox, "testUser");
-		generic.fill(login.passwordTextBox, "testPassword");
-		generic.click(login.loginBtn);
+		login.loginUser(config.username, config.password);
 		generic.click(homePage.compareExpenses);
 		// Visual checkpoint #1 - Check for year 2017,2018
 		eyes.checkWindow("CompareExpenses2017,2018");
@@ -152,12 +138,9 @@ public class VisualAITests  extends BaseTest  {
 	public void DynamicContentTest() {
 		eyes.open(driver, "Hackathon App", "DynamicContentTest");
 		generic.openUrl(urlProvider.getV2Url()+"?showAd=true");
-		generic.fill(login.usernameTextBox, "testUser");
-		generic.fill(login.passwordTextBox, "testPassword");
-		generic.click(login.loginBtn);
+		login.loginUser(config.username, config.password);
 		// Visual checkpoint #1 - Check for flash images
 		eyes.checkWindow("FlashImagesOnHomePage");
 		eyes.closeAsync();
-
 	}
 }
